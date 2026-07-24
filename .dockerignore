@@ -1,0 +1,12 @@
+.git
+.github
+.env
+.env.*
+!.env.example
+.npm-cache
+.demo-runtime
+.playwright-cli
+dist
+server-dist
+node_modules
+*.log

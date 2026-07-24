@@ -1,0 +1,28 @@
+# 模拟数据：启明星智造（模拟客户）工业传感控制板 R2；联系人、料号组合、数量、目标价均为虚构测试数据
+line_id,part_number,brand,description,quantity,target_lead_days,target_unit_price_cny,remarks,data_label
+1,STM32F103C8T6,ST,32 位 MCU LQFP48,120,14,10.50,主控；优先 24+ Date Code,模拟数据
+2,STM32 F103C8T6,STMicroelectronics,32 位 MCU LQFP48,80,14,10.20,与第 1 行疑似重复；格式含空格,模拟数据
+3,AMS1117-3.3,UMW,3.3V LDO SOT-223,500,7,0.18,常规料,模拟数据
+4,AMS1117 3V3,,3.3V LDO SOT-223,300,7,0.17,缺品牌；与第 3 行疑似重复,模拟数据
+5,LM358DR,TI,双运放 SOIC-8,300,10,0.45,接受 24+ Date Code,模拟数据
+6,SN74LVC2T45DCUR,TI,双路电平转换 VSSOP-8,200,12,1.20,替代料必须工程确认,模拟数据
+7,W25Q64JVSSIQ,Winbond,64Mbit SPI Flash SOIC-8,500,14,2.60,必须一次性交齐,模拟数据
+8,TPS62160DSG,TI,降压转换器 WSON-8,120,14,4.20,料号疑似缺少包装后缀 R,模拟数据
+9,ESP32-C3-MINI-1-N4,Espressif,Wi-Fi BLE 模组,80,21,13.00,需要原厂包装,模拟数据
+10,BME280,Bosch,温湿压传感器 LGA,60,21,16.00,禁止翻新,模拟数据
+11,MPU-6050,,六轴 IMU QFN,100,14,8.50,品牌缺失；请核实来源,模拟数据
+12,USBLC6-2SC6,ST,USB ESD 保护 SOT-23-6,1000,14,0.42,常规料,模拟数据
+13,SMBJ24A,Littelfuse,24V TVS SMB,300,10,0.75,单向,模拟数据
+14,SS34,MDD,3A 40V 肖特基 SMA,1500,7,0.12,卷带,模拟数据
+15,RC0603FR-0710KL,Yageo,10k 1% 0603 电阻,5000,7,0.008,整盘优先,模拟数据
+16,CL10B104KB8NNNC,Samsung,100nF 50V X7R 0603,5000,7,0.012,整盘优先,模拟数据
+17,GRM188R71C104KA01?,Murata,100nF 16V X7R 0603,2000,10,0.018,末位不确定；需工程核对,模拟数据
+18,PH2.0-4P,,2.0mm 4Pin 连接器,500,14,0.35,品牌与公母头未注明,模拟数据
+19,AO3400A,AOS,N 沟道 MOSFET SOT-23,1000,10,0.22,常规料,模拟数据
+20,ME6211C33M5G-N,Microne,3.3V LDO SOT-23-5,800,14,0.10,常规料,模拟数据
+21,CH340C,WCH,USB 转串口 SOP-16,200,14,1.20,原厂包装,模拟数据
+22,TCA9534APWR,TI,8 位 IO 扩展 TSSOP-16,120,14,2.80,常规料,模拟数据
+23,MAX3485ESA+T,ADI,3.3V RS-485 SOIC-8,120,14,3.50,目标价偏紧,模拟数据
+24,SWPA3012S1R0MT,Sunlord,1uH 功率电感 3012,600,12,0.25,饱和电流需复核,模拟数据
+25,NX3225SA-26.000M-STD-CSR-1,NDK,26MHz 晶振 3225,200,21,1.10,需要频偏规格书,模拟数据
+26,"CUS10S30,H3F",Toshiba,30V 肖特基 SOD-323,300,14,0.30,客户原表含逗号,模拟数据

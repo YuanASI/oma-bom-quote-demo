@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.server.json",
+  "compilerOptions": {
+    "allowImportingTsExtensions": false,
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "noEmit": false,
+    "outDir": "./server-dist",
+    "rootDir": ".",
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.production.tsbuildinfo"
+  },
+  "include": ["server/**/*.ts", "src/domain/**/*.ts"],
+  "exclude": ["server/**/*.test.ts", "server/test-fixtures.ts", "src/**/*.test.ts"]
+}

@@ -1,0 +1,12 @@
+# 模拟数据：嘉准半导体贸易（模拟供应商）；公司、联系人、邮箱、价格、库存均为虚构
+supplier_id,supplier_name,contact,email,mpn,brand,unit_price,currency,tax_basis,moq,stock,lead_days,valid_until,date_code,channel_type,qualification,alternate_for,remark,data_label
+SUP-04,嘉准半导体贸易（模拟）,宋予（虚构）,song.yu@jiazhun-demo.invalid,LM358DR,TI,0.39,CNY,EXCLUDED,100,2500,9,2026-08-10,24+,AUTHORIZED,VERIFIED,,不含税,模拟数据
+SUP-04,嘉准半导体贸易（模拟）,宋予（虚构）,song.yu@jiazhun-demo.invalid,USBLC6-2SC6,ST,0.33,CNY,EXCLUDED,1000,16000,10,2026-07-10,23+,AUTHORIZED,VERIFIED,,报价已过期,模拟数据
+SUP-04,嘉准半导体贸易（模拟）,宋予（虚构）,song.yu@jiazhun-demo.invalid,SMBJ24A,Littelfuse,0.61,CNY,EXCLUDED,100,2300,8,2026-08-10,24+,AUTHORIZED,VERIFIED,,不含税,模拟数据
+SUP-04,嘉准半导体贸易（模拟）,宋予（虚构）,song.yu@jiazhun-demo.invalid,RC0603FR-0710KL,Yageo,0.0072,CNY,EXCLUDED,5000,70000,5,2026-08-10,25+,AUTHORIZED,VERIFIED,,整盘,模拟数据
+SUP-04,嘉准半导体贸易（模拟）,宋予（虚构）,song.yu@jiazhun-demo.invalid,CL10B104KB8NNNC,Samsung,0.0105,CNY,EXCLUDED,4000,88000,5,2026-08-10,25+,AUTHORIZED,VERIFIED,,整盘,模拟数据
+SUP-04,嘉准半导体贸易（模拟）,宋予（虚构）,song.yu@jiazhun-demo.invalid,AO3400A,AOS,0.19,CNY,EXCLUDED,1000,25000,8,2026-08-10,24+,AUTHORIZED,VERIFIED,,原厂包装,模拟数据
+SUP-04,嘉准半导体贸易（模拟）,宋予（虚构）,song.yu@jiazhun-demo.invalid,ME6211C33M5G-N,Microne,0.09,CNY,EXCLUDED,500,20000,8,2026-08-10,25+,AUTHORIZED,VERIFIED,,不含税,模拟数据
+SUP-04,嘉准半导体贸易（模拟）,宋予（虚构）,song.yu@jiazhun-demo.invalid,CH340C,WCH,1.01,CNY,EXCLUDED,100,1200,10,2026-08-10,24+,AUTHORIZED,VERIFIED,,原厂包装,模拟数据
+SUP-04,嘉准半导体贸易（模拟）,宋予（虚构）,song.yu@jiazhun-demo.invalid,TCA9534APWR,TI,2.51,CNY,EXCLUDED,100,400,13,2026-08-10,24+,AUTHORIZED,VERIFIED,,不含税,模拟数据
+SUP-04,嘉准半导体贸易（模拟）,宋予（虚构）,song.yu@jiazhun-demo.invalid,SWPA3012S1R0MT,Sunlord,0.225,CNY,EXCLUDED,500,6000,9,2026-08-10,25+,AUTHORIZED,VERIFIED,,规格书待发,模拟数据

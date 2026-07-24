@@ -1,0 +1,19 @@
+# 模拟数据：云帆元器件（模拟供应商）；公司、联系人、邮箱、价格、库存均为虚构
+supplier_id,supplier_name,contact,email,mpn,brand,unit_price,currency,tax_basis,moq,stock,lead_days,valid_until,date_code,channel_type,qualification,alternate_for,remark,data_label
+SUP-01,云帆元器件（模拟）,周岚（虚构）,lan.zhou@yunfan-demo.invalid,STM32F103C8T6,ST,11.19,CNY,VAT_INCLUDED,90,650,8,2026-08-15,24+,AUTHORIZED,VERIFIED,,原厂包装,模拟数据
+SUP-01,云帆元器件（模拟）,周岚（虚构）,lan.zhou@yunfan-demo.invalid,AMS1117-3.3,UMW,0.18,CNY,VAT_INCLUDED,500,20000,3,2026-08-15,25+,AUTHORIZED,VERIFIED,,整盘可拆,模拟数据
+SUP-01,云帆元器件（模拟）,周岚（虚构）,lan.zhou@yunfan-demo.invalid,LM358DR,TI,0.49,CNY,VAT_INCLUDED,100,5200,5,2026-08-15,24+,AUTHORIZED,VERIFIED,,原厂盘,模拟数据
+SUP-01,云帆元器件（模拟）,周岚（虚构）,lan.zhou@yunfan-demo.invalid,W25Q64JVSSIQ,Winbond,2.71,CNY,VAT_INCLUDED,100,200,5,2026-08-15,24+,AUTHORIZED,VERIFIED,,只能先供 200 片,模拟数据
+SUP-01,云帆元器件（模拟）,周岚（虚构）,lan.zhou@yunfan-demo.invalid,ESP32-C3-MINI-1-N4,Espressif,13.22,CNY,VAT_INCLUDED,50,700,12,2026-08-15,25+,AUTHORIZED,VERIFIED,,原厂包装,模拟数据
+SUP-01,云帆元器件（模拟）,周岚（虚构）,lan.zhou@yunfan-demo.invalid,BME280,Bosch,15.93,CNY,VAT_INCLUDED,50,240,14,2026-08-15,24+,AUTHORIZED,VERIFIED,,可提供批次照片,模拟数据
+SUP-01,云帆元器件（模拟）,周岚（虚构）,lan.zhou@yunfan-demo.invalid,MPU-6050,TDK InvenSense,8.25,CNY,VAT_INCLUDED,50,600,10,2026-08-15,24+,AUTHORIZED,VERIFIED,,品牌需客户确认,模拟数据
+SUP-01,云帆元器件（模拟）,周岚（虚构）,lan.zhou@yunfan-demo.invalid,SMBJ24A,Littelfuse,0.78,CNY,VAT_INCLUDED,100,5000,6,2026-08-15,25+,AUTHORIZED,VERIFIED,,单向,模拟数据
+SUP-01,云帆元器件（模拟）,周岚（虚构）,lan.zhou@yunfan-demo.invalid,SS34,MDD,0.12,CNY,VAT_INCLUDED,1000,42000,3,2026-08-15,25+,AUTHORIZED,VERIFIED,,卷带,模拟数据
+SUP-01,云帆元器件（模拟）,周岚（虚构）,lan.zhou@yunfan-demo.invalid,RC0603FR-0710KL,Yageo,0.0085,CNY,VAT_INCLUDED,5000,80000,3,2026-08-15,25+,AUTHORIZED,VERIFIED,,整盘,模拟数据
+SUP-01,云帆元器件（模拟）,周岚（虚构）,lan.zhou@yunfan-demo.invalid,CL10B104KB8NNNC,Samsung,0.0124,CNY,VAT_INCLUDED,4000,120000,4,2026-08-15,25+,AUTHORIZED,VERIFIED,,整盘,模拟数据
+SUP-01,云帆元器件（模拟）,周岚（虚构）,lan.zhou@yunfan-demo.invalid,AO3400A,AOS,0.23,CNY,VAT_INCLUDED,1000,36000,4,2026-08-15,24+,AUTHORIZED,VERIFIED,,整盘,模拟数据
+SUP-01,云帆元器件（模拟）,周岚（虚构）,lan.zhou@yunfan-demo.invalid,ME6211C33M5G-N,Microne,0.105,CNY,VAT_INCLUDED,1000,50000,5,2026-08-15,25+,AUTHORIZED,VERIFIED,,需求低于 MOQ,模拟数据
+SUP-01,云帆元器件（模拟）,周岚（虚构）,lan.zhou@yunfan-demo.invalid,CH340C,WCH,1.16,CNY,VAT_INCLUDED,100,1800,7,2026-08-15,24+,AUTHORIZED,VERIFIED,,原厂包装,模拟数据
+SUP-01,云帆元器件（模拟）,周岚（虚构）,lan.zhou@yunfan-demo.invalid,TCA9534APWR,TI,2.99,CNY,VAT_INCLUDED,100,980,8,2026-08-15,24+,AUTHORIZED,VERIFIED,,原厂盘,模拟数据
+SUP-01,云帆元器件（模拟）,周岚（虚构）,lan.zhou@yunfan-demo.invalid,MAX3485ESA+T,ADI,3.68,CNY,VAT_INCLUDED,100,560,9,2026-08-15,24+,AUTHORIZED,VERIFIED,,目标价可能无毛利,模拟数据
+SUP-01,云帆元器件（模拟）,周岚（虚构）,lan.zhou@yunfan-demo.invalid,SWPA3012S1R0MT,Sunlord,0.26,CNY,VAT_INCLUDED,500,8000,7,2026-08-15,25+,AUTHORIZED,VERIFIED,,可提供规格书,模拟数据

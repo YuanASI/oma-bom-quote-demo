@@ -1,0 +1,49 @@
+{
+  "name": "oma-bom-quote-demo",
+  "private": true,
+  "version": "0.1.0",
+  "description": "真实 OMA + 模型 API 主路径、明确离线回放备用路径的电子料 BOM 报价审核台演示。",
+  "type": "module",
+  "engines": {
+    "node": "22.x",
+    "npm": "10.x"
+  },
+  "scripts": {
+    "dev": "node --env-file-if-exists=.env --import tsx server/index.ts --dev",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "tsc -b && vite build",
+    "build:server": "tsc -p tsconfig.production.json",
+    "start": "node --env-file-if-exists=.env server-dist/server/index.js",
+    "lint": "oxlint",
+    "typecheck": "tsc -b --pretty false",
+    "test": "vitest run",
+    "test:e2e:oma": "node --env-file-if-exists=.env --import tsx scripts/e2e-oma.ts",
+    "preflight:oma": "node --env-file-if-exists=.env --import tsx scripts/preflight-oma.ts",
+    "capture:replay": "node --env-file-if-exists=.env --import tsx scripts/capture-replay.ts",
+    "check:boundaries": "node scripts/check-boundaries.mjs",
+    "verify": "npm run lint && npm run typecheck && npm run test && npm run check:boundaries && npm run build",
+    "preview": "vite preview --host 127.0.0.1",
+    "reset": "node scripts/reset-demo.mjs"
+  },
+  "dependencies": {
+    "@open-multi-agent/core": "1.12.1",
+    "express": "^5.1.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.13.2",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@types/supertest": "^6.0.3",
+    "@vitejs/plugin-react": "^6.0.3",
+    "oxlint": "^1.71.0",
+    "supertest": "^7.1.4",
+    "tsx": "^4.21.0",
+    "typescript": "~5.9.3",
+    "vite": "^8.1.1",
+    "vitest": "^4.0.18"
+  }
+}

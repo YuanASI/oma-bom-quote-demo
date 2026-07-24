@@ -1,0 +1,106 @@
+{
+  "dataLabel": "模拟数据",
+  "notice": "公司、联系人、邮箱、价格、库存、资质状态均为虚构，仅用于离线流程演示。",
+  "supplier": {
+    "id": "SUP-03",
+    "name": "凌峰电子供应服务（模拟）",
+    "contact": "顾宁（虚构）",
+    "email": "gu.ning@lingfeng-demo.invalid",
+    "qualification": "PENDING"
+  },
+  "currency": "HKD",
+  "taxBasis": "EXCLUDED",
+  "quotes": [
+    {
+      "mpn": "STM32F103C8T6",
+      "brand": "ST",
+      "unitPrice": 9.2,
+      "moq": 100,
+      "stock": 1600,
+      "leadDays": 10,
+      "validUntil": "2026-08-01",
+      "dateCode": "24+",
+      "channelType": "BROKER",
+      "alternateFor": "",
+      "remark": "价格低；供应商资质待人工审核"
+    },
+    {
+      "mpn": "TPS62160DSGR",
+      "brand": "TI",
+      "unitPrice": 4.35,
+      "moq": 100,
+      "stock": 700,
+      "leadDays": 10,
+      "validUntil": "2026-08-01",
+      "dateCode": "23+",
+      "channelType": "BROKER",
+      "alternateFor": "",
+      "remark": "客户料号疑似缺少 R；需工程核对"
+    },
+    {
+      "mpn": "MPU-6050",
+      "brand": "TDK InvenSense",
+      "unitPrice": 7.6,
+      "moq": 100,
+      "stock": 900,
+      "leadDays": 9,
+      "validUntil": "2026-08-01",
+      "dateCode": "混批",
+      "channelType": "BROKER",
+      "alternateFor": "",
+      "remark": "品牌与 Date Code 均需复核"
+    },
+    {
+      "mpn": "GRM188R71C104KA01D",
+      "brand": "Murata",
+      "unitPrice": 0.016,
+      "moq": 4000,
+      "stock": 40000,
+      "leadDays": 8,
+      "validUntil": "2026-08-01",
+      "dateCode": "25+",
+      "channelType": "BROKER",
+      "alternateFor": "",
+      "remark": "客户末位为问号；本报价按 D 后缀"
+    },
+    {
+      "mpn": "PH2.0-4P",
+      "brand": "Generic",
+      "unitPrice": 0.23,
+      "moq": 1000,
+      "stock": 12000,
+      "leadDays": 6,
+      "validUntil": "2026-08-01",
+      "dateCode": "N/A",
+      "channelType": "BROKER",
+      "alternateFor": "",
+      "remark": "需求低于 MOQ；品牌与公母头未确认"
+    },
+    {
+      "mpn": "AO3400A",
+      "brand": "AOS",
+      "unitPrice": 0.205,
+      "moq": 1000,
+      "stock": 28000,
+      "leadDays": 7,
+      "validUntil": "2026-08-01",
+      "dateCode": "24+",
+      "channelType": "BROKER",
+      "alternateFor": "",
+      "remark": "供应商资质待人工审核"
+    },
+    {
+      "mpn": "TCA9534APWR",
+      "brand": "TI",
+      "unitPrice": 2.82,
+      "moq": 100,
+      "stock": 500,
+      "leadDays": 12,
+      "validUntil": "2026-08-01",
+      "dateCode": "24+",
+      "channelType": "BROKER",
+      "alternateFor": "",
+      "remark": "供应商资质待人工审核"
+    }
+  ]
+}
