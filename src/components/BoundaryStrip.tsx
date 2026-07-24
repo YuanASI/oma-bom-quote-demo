@@ -32,9 +32,9 @@ export function BoundaryStrip({
     <div className="boundary-strip" role="note">
       <strong>模拟数据演示</strong>
       <span>{pathLabel(selectedPath, runtimeStatus, completedRun)}</span>
-      <span>未接 ERP / 邮箱 / 报价库</span>
-      <span>不联系供应商</span>
-      <span>不自动下单</span>
+      <span>非客户案例</span>
+      <span>不构成报价或采购建议</span>
+      <span>请勿上传真实业务资料</span>
     </div>
   )
 }

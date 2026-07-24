@@ -123,4 +123,23 @@ describe('本地 API 双路径', () => {
     expect(response.headers['x-content-type-options']).toBe('nosniff')
     expect(response.headers['x-frame-options']).toBe('DENY')
   })
+
+  it('只接收白名单内的第一方分析事件', async () => {
+    const app = createDemoApp()
+    const accepted = await request(app)
+      .post(`${API_PREFIX}/events`)
+      .send({
+        event: 'demo_consultation_clicked',
+        parameters: { placement: 'header' },
+      })
+    expect(accepted.status).toBe(204)
+
+    const rejected = await request(app)
+      .post(`${API_PREFIX}/events`)
+      .send({
+        event: 'raw_business_data',
+        parameters: { payload: 'not allowed' },
+      })
+    expect(rejected.status).toBe(400)
+  })
 })

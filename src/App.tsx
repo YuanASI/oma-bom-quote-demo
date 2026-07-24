@@ -1,4 +1,5 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
+import { trackDemoEvent } from './analytics'
 import {
   getRuntimeStatus,
   runLiveReview,
@@ -34,6 +35,8 @@ const stageMeta: Array<{ id: Stage; index: string; label: string }> = [
   { id: 'export', index: '04', label: '审批导出' },
 ]
 
+const consultationUrl = '/#contact'
+
 function auditEntry(action: string, subject: string, detail: string): AuditEntry {
   const timestamp = new Date().toISOString()
   return {
@@ -60,6 +63,7 @@ function initialAudit(dataset: DemoDataset): AuditEntry[] {
 }
 
 function App() {
+  const openedTracked = useRef(false)
   const [dataset, setDataset] = useState<DemoDataset>(() => createDemoDataset())
   const [run, setRun] = useState(() => runQuoteReview(dataset))
   const [stage, setStage] = useState<Stage>('input')
@@ -78,6 +82,11 @@ function App() {
   const [importResults, setImportResults] = useState<ImportResult[]>([])
 
   useEffect(() => {
+    if (!openedTracked.current) {
+      trackDemoEvent('demo_open')
+      openedTracked.current = true
+    }
+
     let cancelled = false
     getRuntimeStatus()
       .then((status) => {
@@ -125,6 +134,12 @@ function App() {
       setRun(nextRun)
       setHasRun(true)
       setProcessing({ status: 'success', path })
+      trackDemoEvent('demo_run_succeeded', {
+        path,
+        execution_mode: nextRun.mode,
+        provider: nextRun.runtime?.provider ?? 'none',
+        roles: nextRun.runtime?.receipt?.rolesExecuted.length ?? 0,
+      })
       setAuditEntries((current) => [
         ...current,
         auditEntry(
@@ -151,6 +166,25 @@ function App() {
 
   function startRun(path: DemoPath) {
     void executeRun(path)
+  }
+
+  function selectPath(path: DemoPath) {
+    setSelectedPath(path)
+    trackDemoEvent('demo_path_selected', { path })
+  }
+
+  function navigateToStage(target: Stage) {
+    setStage(target)
+    if (target === 'review') {
+      trackDemoEvent('demo_review_opened', { execution_mode: run.mode })
+    }
+    if (target === 'export') {
+      trackDemoEvent('demo_export_opened', { approval: approval.decision })
+    }
+  }
+
+  function trackConsultation(placement: string) {
+    trackDemoEvent('demo_consultation_clicked', { placement })
   }
 
   async function importFiles(files: FileList) {
@@ -307,6 +341,25 @@ function App() {
 
   return (
     <div className="app-shell">
+      <div className="yuanasi-bar">
+        <a className="yuanasi-brand" href="/" aria-label="返回元定义科技官网">
+          <span className="yuanasi-mark" aria-hidden="true" />
+          <span>
+            <strong>元定义科技 · YuanASI</strong>
+            <small>ENTERPRISE AI AGENTS</small>
+          </span>
+        </a>
+        <div className="yuanasi-actions">
+          <a href="/">← 返回官网</a>
+          <a
+            className="yuanasi-consult"
+            href={consultationUrl}
+            onClick={() => trackConsultation('header')}
+          >
+            预约沟通
+          </a>
+        </div>
+      </div>
       <BoundaryStrip
         selectedPath={selectedPath}
         runtimeStatus={runtimeStatus}
@@ -342,7 +395,7 @@ function App() {
               type="button"
               className={active ? 'active' : ''}
               disabled={!enabled}
-              onClick={() => enabled && setStage(item.id)}
+              onClick={() => enabled && navigateToStage(item.id)}
               key={item.id}
             >
               <span>{item.index}</span>
@@ -368,7 +421,7 @@ function App() {
             isBundledDataset={isBundledDataset}
             customImportsAllowed={runtimeStatus?.customImportsAllowed === true}
             onImport={importFiles}
-            onPathChange={setSelectedPath}
+            onPathChange={selectPath}
             onRun={startRun}
           />
         )}
@@ -377,7 +430,7 @@ function App() {
             dataset={dataset}
             run={processing.status === 'success' ? run : undefined}
             state={processing}
-            onContinue={() => setStage('review')}
+            onContinue={() => navigateToStage('review')}
             onRetry={() => {
               void executeRun(processing.path)
             }}
@@ -396,7 +449,7 @@ function App() {
             onOverride={changeRecommendation}
             onToggleMoreQuote={toggleMoreQuote}
             onDecision={decideBatch}
-            onExport={() => setStage('export')}
+            onExport={() => navigateToStage('export')}
           />
         )}
         {stage === 'export' && (
@@ -409,11 +462,19 @@ function App() {
       </main>
 
       <footer className="app-footer">
-        <p>
-          <strong>全部为虚构模拟数据。</strong>
-          当前未接入真实 ERP、报价库、邮箱或供应商系统；替代料不构成工程认证。
-        </p>
-        <p>Demo 证明流程与交付形态，不证明真实客户已获得收益。真实价值需用脱敏历史 BOM 回放验证。</p>
+        <div>
+          <p>
+            <strong>全部为虚构模拟数据。</strong>
+            当前未接入真实 ERP、报价库、邮箱或供应商系统；替代料不构成工程认证。
+          </p>
+          <p>Demo 证明流程与交付形态，不证明真实客户已获得收益。真实价值需用脱敏历史 BOM 回放验证。</p>
+        </div>
+        <a
+          href={consultationUrl}
+          onClick={() => trackConsultation('footer')}
+        >
+          想验证你的业务流程？预约沟通 →
+        </a>
       </footer>
     </div>
   )
