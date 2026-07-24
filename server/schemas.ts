@@ -82,6 +82,22 @@ export const liveReviewRequestSchema = z.object({
   }),
 })
 
+export const demoAnalyticsEventSchema = z.object({
+  event: z.enum([
+    'demo_open',
+    'demo_path_selected',
+    'demo_run_succeeded',
+    'demo_review_opened',
+    'demo_export_opened',
+    'demo_export_downloaded',
+    'demo_consultation_clicked',
+  ]),
+  parameters: z.record(
+    z.string().max(40),
+    z.union([z.string().max(80), z.number().finite(), z.boolean()]),
+  ).default({}),
+})
+
 export type SupplierExtraction = z.infer<typeof supplierExtractionSchema>
 export type BomAnalysis = z.infer<typeof bomAnalysisSchema>
 export type EvidenceReview = z.infer<typeof evidenceReviewSchema>

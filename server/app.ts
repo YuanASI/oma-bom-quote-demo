@@ -19,7 +19,7 @@ import {
   type OmaWorkflowResult,
 } from './oma-runner.js'
 import { replayStatus, runOfflineReplay } from './replay.js'
-import { liveReviewRequestSchema } from './schemas.js'
+import { demoAnalyticsEventSchema, liveReviewRequestSchema } from './schemas.js'
 import {
   PublicRunGuard,
   publicRunLimitsFromEnv,
@@ -131,6 +131,22 @@ export function createDemoApp(dependencies: AppDependencies = {}): Express {
     } catch (error) {
       jsonError(res, 500, error instanceof Error ? error.message : '运行时配置无效')
     }
+  })
+
+  app.post(`${API_PREFIX}/events`, (req, res) => {
+    const parsed = demoAnalyticsEventSchema.safeParse(req.body)
+    if (!parsed.success) {
+      jsonError(res, 400, '埋点事件格式无效')
+      return
+    }
+
+    console.log(JSON.stringify({
+      event: 'bom_demo_analytics',
+      requestId: res.locals['requestId'],
+      name: parsed.data.event,
+      parameters: parsed.data.parameters,
+    }))
+    res.status(204).end()
   })
 
   app.post(`${API_PREFIX}/review/live`, async (req: Request, res: Response) => {

@@ -1,6 +1,7 @@
 import type { ExportArtifact } from '../domain/exports'
 import { downloadArtifact } from '../domain/exports'
 import type { ApprovalState, AuditEntry } from '../domain/types'
+import { trackDemoEvent } from '../analytics'
 
 interface ExportCenterProps {
   artifacts: ExportArtifact[]
@@ -53,7 +54,14 @@ export function ExportCenter({ artifacts, approval, auditEntries }: ExportCenter
                 <span>{artifact.fileName}</span>
               </div>
             </div>
-            <button type="button" className="secondary-button" onClick={() => downloadArtifact(artifact)}>
+            <button
+              type="button"
+              className="secondary-button"
+              onClick={() => {
+                trackDemoEvent('demo_export_downloaded', { artifact: artifact.id })
+                downloadArtifact(artifact)
+              }}
+            >
               下载文件
               <span aria-hidden="true">↓</span>
             </button>
