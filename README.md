@@ -31,7 +31,7 @@
 环境要求：Node.js 22.x、npm 10.x。
 
 ```bash
-cd /Users/jack/DEV/oma-bom-quote-demo
+git clone https://github.com/YuanASI/oma-bom-quote-demo.git && cd oma-bom-quote-demo
 npm ci --cache .npm-cache
 cp .env.example .env
 ```
@@ -204,3 +204,7 @@ docs/                  演示脚本、能力边界、试点建议和验收记录
 - [`docs/historical-replay-next-step.md`](docs/historical-replay-next-step.md)
 - [`docs/delivery-status.md`](docs/delivery-status.md)
 - [`docs/validation-log.md`](docs/validation-log.md)
+
+## License
+
+本项目以 MIT 许可证开源，详见 [`LICENSE`](LICENSE)。

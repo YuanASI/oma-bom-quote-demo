@@ -1,5 +1,7 @@
 # OMA 框架反馈：BOM 报价 Demo 真实验收
 
+> 本文是基于 open-multi-agent 1.12.1 的内部评估记录，部分条目引用了当时 main 分支尚未发布的能力，以发布版文档为准。
+
 - 验证日期：2026-07-23
 - Demo：`oma-bom-quote-demo`
 - Demo 实际依赖：`@open-multi-agent/core@1.12.1`

@@ -19,7 +19,7 @@
 - React + TypeScript + Vite + 本地 Node 服务；业务判断保持在 `src/domain/` 的纯函数中。
 - 输入格式解析集中在 `src/domain/importers.ts`，导出集中在 `src/domain/exports.ts`。
 - 行为改动必须补测试；运行 `npm run verify` 完成最小验收。
-- OMA 作为 npm 依赖使用，不修改 `/Users/jack/DEV/open-multi-agent`。
+- OMA 作为 npm 依赖使用，不修改 open-multi-agent 仓库本身。
 - 浏览器只调用本机 `/api`；除模型 provider 外，服务端不得访问任何外部系统。
 - 模型只负责开放文本抽取、归类、消歧建议和证据复核；价格、税费、库存、MOQ、交期、毛利、审批和导出由确定性代码控制。
 - 实时路径失败时必须返回真实失败，只有用户明确点击后才能进入离线回放。

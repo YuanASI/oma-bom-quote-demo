@@ -2,6 +2,7 @@
   "name": "oma-bom-quote-demo",
   "private": true,
   "version": "0.1.0",
+  "license": "MIT",
   "description": "真实 OMA + 模型 API 主路径、明确离线回放备用路径的电子料 BOM 报价审核台演示。",
   "type": "module",
   "engines": {
